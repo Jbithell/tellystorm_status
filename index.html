@@ -36,11 +36,11 @@
             if (data.status == "2") { var up = true; }
             else { var up = false; }
             if (up) { 
-                $("#sitestatus").text = "All systems go!"; 
+                $("#sitestatus").text("All systems go!"); 
             } else {
-                $("#sitestatus").text = "Site currently down - We're working on it!"; 
+                $("#sitestatus").text("Site currently down - We're working on it!"); 
             }
-            $("#siteheader").text = data.friendlyname + " Live Status";
+            $("#siteheader").text(data.friendlyname + " Live Status");
             
             console.log(data);
             

@@ -10,6 +10,7 @@ $(document).ready(function(){
     url: "https://api.uptimerobot.com/getMonitors?noJsonCallback=1&apiKey=m776982558-1efb178a25c1f6312b8bfe41&format=json&monitors=776982558&logs=1&customUptimeRatio=7-10-15-20-25-30-60-180&responseTimes=1&showTimezone=1"
     , success: function(result){
       console.log(result);
+      console.log($.makeArray(result));
     }, error: function(xhr, status, error) {
       var err = eval("(" + xhr.responseText + ")");
       //alert(err.Message);

@@ -2,16 +2,17 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
 
 <script>
 $(document).ready(function(){
   $.ajax({
     url: "https://api.uptimerobot.com/getMonitors?apiKey=m776982558-1efb178a25c1f6312b8bfe41&format=json&monitors=776982558&logs=1&customUptimeRatio=7-10-15-20-25-30-60-180&responseTimes=1&showTimezone=1"
     , success: function(result){
-      alert(result);
-    }, error: function(result){
-      bootbox.alert("Please check you internet connection and try again!");
+      bootbox.alert(result);
+    }, error: function(xhr, status, error) {
+      var err = eval("(" + xhr.responseText + ")");
+      alert(err.Message);
     }
   });
 });
